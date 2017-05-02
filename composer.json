@@ -1,0 +1,23 @@
+{
+    "name": "ymgururaj/testwebapp",
+    "description": "Web app to IaaS",
+    "keywords": ["jobapplication"],
+    "homepage": "http://www.github.com/ymgururaj/testwebapp",
+    "license": "  ",
+    "authors": [
+        {
+            "name": "Gururaj Yalpi Madhuranath",
+            "email": "gy9526@rit.edu"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "ext-intl": "*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    
+}
