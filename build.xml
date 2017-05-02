@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Money" default="build">
+<project name="testwebapp" default="build">
     <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdox,-check-failure"/>
 
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
@@ -16,16 +16,6 @@
         <mkdir dir="${basedir}/build/logs"/>
         <mkdir dir="${basedir}/build/pdepend"/>
         <property name="prepare.done" value="true"/>
-    </target>
-
-    <target name="generate-code" description="Generate Currency-specific subclasses of Money and autoloader code">
-        <exec executable="${basedir}/build/generate-child-classes.php" taskname="generate-code"/>
-
-        <exec executable="${basedir}/build/tools/phpab.phar" taskname="generate-code">
-            <arg value="--output"/>
-            <arg path="src/autoload.php"/>
-            <arg path="src"/>
-        </exec>
     </target>
 
     <target name="lint" depends="generate-code">
@@ -98,7 +88,6 @@
         <exec executable="${basedir}/build/tools/phpcs.phar" taskname="phpcs">
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
-            <arg value="--ignore=autoload.php"/>
             <arg path="${basedir}/src"/>
             <arg path="${basedir}/tests"/>
         </exec>
@@ -111,7 +100,6 @@
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml"/>
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
-            <arg value="--ignore=autoload.php"/>
             <arg path="${basedir}/src"/>
         </exec>
     </target>
