@@ -18,21 +18,7 @@
         <property name="prepare.done" value="true"/>
     </target>
 
-    <target name="lint" depends="index.php">
-        <apply executable="php" failonerror="true" taskname="lint">
-            <arg value="-l"/>
-
-            <fileset dir="${basedir}/src">
-                <include name="**/*.php"/>
-                <modified/>
-            </fileset>
-
-            <fileset dir="${basedir}/tests">
-                <include name="**/*.php"/>
-                <modified/>
-            </fileset>
-        </apply>
-    </target>
+  
 
     <target name="phploc" description="Measure project size using PHPLOC">
         <exec executable="${basedir}/build/tools/phploc.phar" taskname="phploc">
