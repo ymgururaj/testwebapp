@@ -60,7 +60,6 @@
             <arg value="--standard=PSR2"/>
             <arg value="--extensions=php"/>
             <arg path="${basedir}/src"/>
-            <arg path="${basedir}/tests"/>
         </exec>
     </target>
 
@@ -97,7 +96,7 @@
         </exec>
     </target>
 
-    <target name="phpdox" depends="phploc-ci,phpcs-ci,phpmd-ci" description="Generate API documentation using phpDox">
+    <target name="phpdox" depends="phpcs-ci,phpmd-ci" description="Generate API documentation using phpDox">
         <exec executable="${basedir}/build/tools/phpdox.phar" dir="${basedir}/build" taskname="phpdox"/>
     </target>
 
