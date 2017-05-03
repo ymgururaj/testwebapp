@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="testwebapp" default="build">
-    <target name="build" depends="prepare,lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdox,-check-failure"/>
+    <target name="build" depends="prepare,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdox,-check-failure"/>
 
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
         <delete dir="${basedir}/build/api"/>
@@ -17,8 +17,6 @@
         <mkdir dir="${basedir}/build/pdepend"/>
         <property name="prepare.done" value="true"/>
     </target>
-
-  
 
     <target name="phploc" description="Measure project size using PHPLOC">
         <exec executable="${basedir}/build/tools/phploc.phar" taskname="phploc">
