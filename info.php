@@ -214,21 +214,6 @@ function test_input($data) {
 </div>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "capstone";
-$dbname = "webapp";
-
-
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 if (isset($_POST['next'])) 
 {
@@ -244,30 +229,11 @@ if ( $employedErr !="" ||  $empstatusErr !="" || $referredErr!="" || $jobtypeErr
 
 else {
 
-$employed= $_POST['employed'];
-$referred = $_POST['referred'];
-$empname = $_POST['empname'];
-$empstatus = $_POST['empstatus'];
-$jobtype = $_POST['jobtype'];
-$schedule = $_POST['schedule'];
-$joblevel = $_POST['joblevel'];
-
-
-
-$sql = "INSERT INTO questions (employed, referred,  empname, empstatus, jobtype, schedule, joblevel) 
-VALUES ('$employed', '$referred','$empname', '$empstatus', '$jobtype', '$schedule', '$joblevel') ";
-
-if ($conn->query($sql) === TRUE) {
              ?><script>
            <?php echo " alert('Data Saved\\n\\n Click OK to Continue ');"; ?>
          window.location = 'edu.php';
     </script> <?php
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-}
+} 
 }
 ?>
 
