@@ -42,7 +42,7 @@ div {
     padding: 10px;
 	position : relative;
 	height: 400px;
-    border: 1px solid black;
+    border: 1px solid blue;
 	border-radius: 25px;
     
 }
@@ -120,7 +120,7 @@ input[type=checkbox] {
 <body style="background-color:silver;">
 
 <div>
-<p><font size="5" color=#000000 face= "Courier New"><b> Personal Information  </b></font></p>
+<p><font size="5" color=#0000ff face= "Courier New"><b> Personal Information  </b></font></p>
     
 
 
