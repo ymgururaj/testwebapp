@@ -274,8 +274,8 @@ function test_input($data) {
   
 
 </tr><tr class="blank_row"  rowspan = "2"></tr>
-<tr><td align="center" colspan = "2"><input type="submit" name="save" class="button" value="Save" ></td>
-	<td align="center" colspan = "2"><input type="submit" name="next" class="button" value="Next" formaction = "info.php" ></td>
+<tr>
+	<td align="center" colspan = "2"><input type="submit" name="next" class="button" value="Next"  ></td>
 </tr>
 </table>
 </form>
