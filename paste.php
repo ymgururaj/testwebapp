@@ -163,21 +163,7 @@ function test_input($data) {
 
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "capstone";
-$dbname = "webapp";
 
-
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 if (isset($_POST['submit'])) 
 {
@@ -193,26 +179,12 @@ if ( $resumeErr !="" || $skillsErr !=""   )
 
 else {
 
-$resume= $_POST['resume'];
-$coverletter = $_POST['coverletter'];
-$skills = $_POST['skills'];
 
-
-
-$sql = "INSERT INTO upload ( resume, coverletter,  skills) 
-VALUES ('$resume', '$coverletter','$skills') ";
-
-if ($conn->query($sql) === TRUE) {
              ?><script>
            <?php echo " alert('Data Saved\\n\\n Click OK to Continue ');"; ?>
          window.location = 'submit.html';
     </script> <?php
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();
-}
+} 
 }
 ?>
 
