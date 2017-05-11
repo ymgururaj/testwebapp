@@ -281,6 +281,26 @@ function test_input($data) {
 </form>
 </div>
 
+<?php
+
+if (isset($_POST['next'])) 
+{
+if ( $inst1Err !="" || $inst2Err !="" || $prg2Err !="" || $prg1Err!="" || $edlevel1Err !="" || $edlevel2Err !="" ||
+ $start1Err !="" || $start2Err!="" || $grad1Err !="" ||  $grad2Err !=""  )
+{
+?> <script>
+        <?php echo " alert('Entry Response Results\\n\\nPlease Fix the Entries with errors to continue ');"; ?>
+         
+    </script> <?php 
+}
+else {
+             ?><script>
+           <?php echo " alert('Data Saved\\n\\n Click OK to Continue ');"; ?>
+         window.location = 'paste.php';
+    </script> <?php
+} 
+}
+?>
 
 
 
