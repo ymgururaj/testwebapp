@@ -584,21 +584,7 @@ function test_input($data) {
 
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "capstone";
-$dbname = "webapp";
 
-
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 if (isset($_POST['next'])) 
 {
@@ -615,33 +601,16 @@ if ( $firstnameErr !="" || $address1Err !="" || $address2Err !="" || $lastnameEr
 
 else {
 
-$firstname= $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$address1 = $_POST['address1'];
-$address2 = $_POST['address2'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$postalcode = $_POST['postalcode'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
-$country = $_POST['country'];
 
-
-$sql = "INSERT INTO personal (firstname, lastname,  address1, address2, city, state, postalcode, country,  phone, email) 
-VALUES ('$firstname', '$lastname','$address1', '$address2', '$city', '$state', '$postalcode' , '$country', '$phone', '$email') ";
-
-if ($conn->query($sql) === TRUE) {
            ?> <script>
            <?php echo " alert('Data Saved\\n\\n Click OK to go to Next Page ');"; ?>
          window.location = 'info.php';
     </script> <?php
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+} 
 }
 
-$conn->close();
-}
-}
+
+
 ?>
 
 
