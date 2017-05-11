@@ -281,21 +281,6 @@ function test_input($data) {
 </div>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "capstone";
-$dbname = "webapp";
-
-
-
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 if (isset($_POST['next'])) 
 {
@@ -312,32 +297,14 @@ if ( $inst1Err !="" || $inst2Err !="" || $prg2Err !="" || $prg1Err!="" || $edlev
 
 else {
 
-$inst1= $_POST['inst1'];
-$inst2 = $_POST['inst2'];
-$prg1 = $_POST['prg1'];
-$prg2 = $_POST['prg2'];
-$edlevel1 = $_POST['edlevel1'];
-$edlevel2 = $_POST['edlevel2'];
-$start1= $_POST['start1'];
-$start2 = $_POST['start2'];
-$grad1 = $_POST['grad1'];
-$grad2 = $_POST['grad2'];
-
-
-$sql = "INSERT INTO education (inst1, prg1, edlevel1, start1, grad1, inst2, prg2, edlevel2, start2,grad2) 
-VALUES ('$inst1', '$prg1','$edlevel1', '$start1', '$grad1', '$inst2', '$prg2' , '$edlevel2', '$start2', '$grad2') ";
-
-if ($conn->query($sql) === TRUE) {
              ?><script>
            <?php echo " alert('Data Saved\\n\\n Click OK to Continue ');"; ?>
          window.location = 'paste.php';
-    </script> <?php
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    </script> 
 }
 
-$conn->close();
-}
+
+
 }
 ?>
 
